@@ -31,13 +31,14 @@ const Doctors = () => {
       <p className='text-gray-600'>Browse throught the doctors specilist</p>
       <div className='flex flex-col sm:flex-row items-start gap-5 mt-5'>
         <button
-          className={`py-1 px-3 border rounded text-sm transition-all sm:hidden ${showFilter ? 'bg-amber-300 text-white' :''}`}
+          className={`py-1 px-3 border rounded text-sm transition-all sm:hidden ${showFilter ? 'bg-amber-300 text-white' : ''}`}
           onClick={() => setShowFilter(prev => !prev)}
         >
           Filters
         </button>
 
-        <div className=' flex flex-col gap-3 text-sm text-gray-600'>
+        <div className={`flex flex-col gap-3 text-sm text-gray-600 ${showFilter ? 'flex' : 'hidden sm:flex'}`}>
+
           <p
             onClick={() => speciality === 'General Physician' ? navigate('/doctors') : navigate('/doctors/General physician')}
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${speciality === "General physician" ? "bg-indigo-100 text-black" : ""}`}
