@@ -62,4 +62,4 @@ const doctorSchema=new mongoose.Schema({
 },{minimize:false})
 // minimize : false karne se emptye object as a default hum rakh sakte hai
 
-const doctorModel=mongoose.model('doctor',doctorSchema)
+const doctorModel=mongoose.models.doctor || mongoose.model('doctor',doctorSchema)
